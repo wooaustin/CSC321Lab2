@@ -65,7 +65,7 @@ def main():
     # Part 1
     s1 = "Darlin dont you go"
     s2 = "and cut your hair!"
-    print(xor_two_str(s1, s2))
+    #print(xor_two_str(s1, s2))
 
     # Part 2
     f = open("ciphertext.txt", "w")
@@ -100,7 +100,9 @@ def main():
 
     # Part 4
     f = open("overlay_image.bmp", "wb")
-    encrypt_both = xor_two_str(final_encrypt_a, final_encrypt_b)
+    encrypted_cp_logo = get_bmp_file("encrypted-cp-logo.bmp")
+    encrypted_mustang = get_bmp_file("encrypted-mustang.bmp")
+    encrypt_both = xor_two_str(encrypted_cp_logo, encrypted_mustang)
     replaceHeader(preprocessed_a, encrypt_both, f)
     f.close()
 main()
